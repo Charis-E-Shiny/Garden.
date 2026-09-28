@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TinyGPT Web Chat</title>
+  <title>Garden.</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background: #f4f6f8; display: flex; flex-direction: column; height: 100vh; }
+    body {
+      background: url('...') no-repeat center center fixed; 
+      background-size: cover;
+      display: flex; 
+      flex-direction: column; 
+      height: 100vh; 
+    }
     
     /* Header & Logo Area */
     header { background: #ffffff; padding: 1rem 2rem; display: flex; align-items: center; gap: 1rem; border-bottom: 1px solid #e5e7eb; }
@@ -43,17 +49,17 @@
       <img src="logo.png" alt="Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
       <div class="logo-placeholder" style="display:none;">LOGO</div>
     </div>
-    <h1>TinyGPT Voice & Text Assistant</h1>
+    <h1>Garden.</h1>
   </header>
 
-  <div id="status">Loading model and vocabulary...</div>
+  <div id="status">Hello! Welcome to Garden.</div>
 
   <div id="chat-box"></div>
 
   <div class="input-area">
-    <button id="mic-btn" class="btn-mic" title="Voice Input">🎤</button>
+    <button id="mic-btn" class="btn-mic" title="Voice Input">🎙️</button>
     <input type="text" id="user-input" placeholder="Type a message or use voice..." disabled />
-    <button id="send-btn" class="btn-send" disabled>Send</button>
+    <button id="send-btn" class="btn-send" disabled>➡️</button>
   </div>
 
   <script src="app.js"></script>
