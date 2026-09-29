@@ -13,22 +13,10 @@ const statusDiv = document.getElementById("status");
 async function init() {
   try {
     const vocabResp = await fetch("vocab.json");
-    // stoi = await vocabResp.json();
-    // for (const [k, v] of Object.entries(stoi)) {
-    //   itos[v] = k;
-    // }
-
-    const vocab = await vocabResp.json();
-
-    for (const [tok, idx] of Object.entries(vocab)) {
-      stoi[tok] = idx;
-      itos[idx] = tok;
+    stoi = await vocabResp.json();
+    for (const [k, v] of Object.entries(stoi)) {
+      itos[v] = k;
     }
-    // const itosArr = await vocabResp.json();
-    // itosArr.forEach((tok, idx) => {
-    //   stoi[tok] = idx;
-    //   itos[idx] = tok;
-    // });
 
     session = await ort.InferenceSession.create("model.onnx", {
       executionProviders: ["wasm"]
